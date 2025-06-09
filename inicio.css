@@ -1,0 +1,108 @@
+/* Header fixo e transparente */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent; /* completamente transparente */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Espaçamento uniforme entre os itens */
+    padding: 25px 40px;
+    z-index: 1000;
+    backdrop-filter: blur(15px)
+}
+
+/* Logo no header */
+.logo {
+    font-size: 1.9rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Menu de navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-size: 28px;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Botão no header */
+.header-button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 16px 27px; /* Botão menor */
+    cursor: pointer;
+    border-radius: 30px; /* Formato arredondado */
+    font-size: 14px; /* Tamanho da fonte reduzido */
+    transition: background-color 0.3s;
+}
+
+.header-button:hover {
+    background-color: #777;
+}
+
+/* Primeira seção com imagem de fundo e o header por cima */
+.box-1 {
+    background-image: url('snapedit_1749477231509.png');
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('snapedit_1749477231509.png');
+    background-size: cover;
+    height: 89vh; /* Ocupa 100% da altura da tela */
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Alinha os filhos (h1 e p) em coluna */
+    align-items: center; /* Centraliza os filhos horizontalmente */
+    justify-content: center; /* Centraliza os filhos verticalmente */
+    padding-top: 100px; /* Para o conteúdo não ficar atrás do header */
+    color: white; /* Define a cor do texto */
+
+}
+
+.box-1 h1, .box-1 p {
+    margin: 10px 0; 
+    position: relative;
+    top: -134px;
+    right: 20%;
+    font-size: 67px;
+    font-family:roboto ;
+    text-shadow: 0px 10px 20px white;
+}
+.box-1 p{
+    max-width: 1000px;
+    text-align: center;
+    color: white;
+}
+.box-1 h1{
+    font-size: 80px;
+}
+.box-1 button{
+    position: relative;
+    top: -70px;
+    right: 20%;
+    padding: 35px 90px;
+    border-radius: 50px;
+    border: none;
+    transition:  0.2s ease-in-out;
+}
+.box-1 button:hover{
+    transform: scale(1.10);
+    cursor: pointer;
+}
