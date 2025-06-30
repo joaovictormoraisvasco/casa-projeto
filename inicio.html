@@ -1,40 +1,365 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header Fixo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SACOPINGO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --cor-primaria: #0E1822;
+      --cor-secundaria: #ffffff;
+      --cor-destaque: rgb(112, 167, 255);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--cor-primaria);
+      color: var(--cor-secundaria);
+    }
+
+    header {
+      background-color: var(--cor-primaria);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 900;
+      border: 3px solid var(--cor-secundaria);
+      padding: 5px 15px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: var(--cor-secundaria);
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+      border: 1px solid white;
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+
+    nav ul li a:hover {
+      color: var(--cor-destaque);
+      border-color: var(--cor-destaque);
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .cta-buttons button {
+      padding: 12px 24px;
+      background-color: transparent;
+      color: var(--cor-secundaria);
+      border: 2px solid var(--cor-secundaria);
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .cta-buttons button:hover {
+      background-color: var(--cor-destaque);
+      color: #000;
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('casamoderna.jpg') no-repeat center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
+      text-shadow: 0 5px 10px #000;
+    }
+
+    .hero p {
+      font-size: 22px;
+      max-width: 700px;
+    }
+
+    .section {
+      padding: 100px 30px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+
+    .section p {
+      font-size: 20px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background-color: #111c26;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      overflow: hidden;
+      width: 300px;
+      transition: transform 0.3s;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card h3 {
+      margin: 20px;
+      font-size: 22px;
+    }
+
+    .card p {
+      margin: 0 20px 20px;
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    footer {
+      background-color: #0b1117;
+      padding: 30px;
+      text-align: center;
+      font-size: 16px;
+      color: #888;
+    }
+    #contato {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #0d1117;
+  color: #fff;
+}
+
+#contato h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+#contato p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+}
+
+.form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-contato input,
+.form-contato textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1c1f26;
+  color: #fff;
+  resize: none;
+  font-size: 1em;
+}
+
+.form-contato button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-contato button:hover {
+  background-color: #45a049;
+}
+
+.redes-sociais {
+  margin-top: 30px;
+}
+
+.redes-sociais a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.8em;
+  transition: transform 0.3s;
+}
+
+.redes-sociais a:hover {
+  transform: scale(1.2);
+}
+
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">SACOPINGO</div>
-        <nav class="navegaçao">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-        <div class="header-buttons">
-            <button class="header-button">Login</button>
-            <button class="header-button">Cadastrar</button>
-        </div>
-    </header>
-    <main>
-        <div class="box-1">
-          <h1>Bem-vindo ao site!</h1>
-          <p>Este é um exemplo de página com um header fixo.</p>
-          <div class="primary-button"
-          <button type="submit">comprar</button>
-        </div>
-          <div class="imagem">
-            <img src="DeWatermark.ai_1749646918092.png" alt="">
-          </div>
-       </div>
-    </main>
+  <header>
+    <div class="logo">SACOPINGO</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="cta-buttons">
+      <button>Login</button>
+      <button>Cadastrar</button>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Projetos Modernos, Resultados Incríveis</h1>
+    <p>Transformamos espaços em obras de arte funcionais. Bem-vindo ao universo SACOPINGO.</p>
+  </section>
+
+  <section id="sobre" class="section">
+    <h2>Sobre Nós</h2>
+    <p>Com anos de experiência, nossa equipe cria soluções arquitetônicas de alto padrão, focadas na elegância, tecnologia e sustentabilidade.</p>
+    
+  </section>
+
+  <section id="servicos" class="section">
+    <h2>Serviços</h2>
+    <p>Oferecemos consultoria, projetos 3D, design de interiores, paisagismo, reformas e acompanhamento de obra.</p>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6" alt="Consultoria">
+        <h3>Consultoria Especializada</h3>
+        <p>Avaliação técnica e estratégica para orientar sua construção ou reforma desde o início.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1586105251261-72a756497a12" alt="Interiores">
+        <h3>Design de Interiores</h3>
+        <p>Ambientes internos funcionais, sofisticados e personalizados para cada cliente.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600585154356-c8c6aa2834a2" alt="Paisagismo">
+        <h3>Paisagismo e Jardins</h3>
+        <p>Integramos a natureza ao projeto com soluções verdes, sustentáveis e estéticas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section">
+    <h2>Portfólio</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Casa moderna 1">
+        <h3>Casa Moderna</h3>
+        <p>Design minimalista e fachada com vidro panorâmico, integrada com a natureza.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1599423300746-b62533397364" alt="Casa de luxo">
+        <h3>Casa de Luxo</h3>
+        <p>Ambientes amplos, área gourmet e iluminação inteligente por toda a casa.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6" alt="Casa tropical">
+        <h3>Casa Tropical</h3>
+        <p>Perfeita para clima quente, com piscina, varanda e integração ao jardim.</p>
+      </div>
+      <div class="card">
+        <img src="campo.jpg" alt="Casa no campo">
+        <h3>Casa de Campo</h3>
+        <p>Ideal para refúgio de fim de semana, com charme rústico e muito conforto.</p>
+      </div>
+      <div class="card">
+        <img src="urbana.jpg" alt="Casa urbana">
+        <h3>Casa Urbana</h3>
+        <p>Compacta, funcional e elegante. Solução ideal para grandes centros.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="depoimentos" class="section">
+    <h2>Depoimentos</h2>
+    <p>Veja o que nossos clientes têm a dizer sobre a experiência com a SACOPINGO.</p>
+    <div class="cards">
+      <div class="card">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente 1">
+        <h3>Maria S.</h3>
+        <p>"O projeto superou todas as minhas expectativas. Atendimento e execução impecáveis!"</p>
+      </div>
+      <div class="card">
+        <img src="https://randomuser.me/api/portraits/men/35.jpg" alt="Cliente 2">
+        <h3>João M.</h3>
+        <p>"Reformei minha casa com a SACOPINGO e ficou maravilhosa. Recomendo muito!"</p>
+      </div>
+    </div>
+  </section>
+
+ <section id="contato" class="section">
+  <h2>Contato</h2>
+  <p>Fale conosco para orçamentos, parcerias ou ideias incríveis. Estamos prontos para te ouvir.</p>
+
+  <form class="form-contato">
+    <input type="text" placeholder="Seu nome" required>
+    <input type="email" placeholder="Seu e-mail" required>
+    <textarea placeholder="Sua mensagem" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div class="redes-sociais">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+</section>
+
+
+  <footer>
+    &copy; 2025 SACOPINGO. Todos os direitos reservados.
+  </footer>
 </body>
 </html>
