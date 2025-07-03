@@ -1,0 +1,231 @@
+
+:root {
+    --cor-primaria: #0E1822;
+    --cor-secundaria: #ffffff;
+    --cor-destaque: rgb(112, 167, 255);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+  }
+
+  header {
+    background-color: var(--cor-primaria);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .logo {
+    font-size: 32px;
+    font-weight: 900;
+    border: 3px solid var(--cor-secundaria);
+    padding: 5px 15px;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
+
+  nav ul li a:hover {
+    color: var(--cor-destaque);
+    border-color: var(--cor-destaque);
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 15px;
+  }
+
+  .cta-buttons button {
+    padding: 12px 24px;
+    background-color: transparent;
+    color: var(--cor-secundaria);
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+  }
+
+  .cta-buttons button:hover {
+    background-color: var(--cor-destaque);
+    color: #000;
+  }
+
+  .hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url("casa-moderna-linhas-retas.jpg") no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  .hero h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    text-shadow: 0 5px 10px #000;
+  }
+
+  .hero p {
+    font-size: 22px;
+    max-width: 700px;
+  }
+
+  .section {
+    padding: 100px 30px;
+    text-align: center;
+  }
+
+  .section h2 {
+    font-size: 48px;
+    margin-bottom: 30px;
+  }
+
+  .section p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .card {
+    background-color: #111c26;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s;
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card:hover {
+    transform:translateY(-10px)
+  }
+
+  .card h3 {
+    margin: 20px;
+    font-size: 22px;
+  }
+
+  .card p {
+    margin: 0 20px 20px;
+    font-size: 16px;
+    color: #ccc;
+  }
+
+  footer {
+    background-color: #0b1117;
+    padding: 30px;
+    text-align: center;
+    font-size: 16px;
+    color: #888;
+  }
+  #contato {
+text-align: center;
+padding: 50px 20px;
+background-color: #0d1117;
+color: #fff;
+}
+
+#contato h2 {
+font-size: 2.5em;
+margin-bottom: 10px;
+}
+
+#contato p {
+font-size: 1.1em;
+margin-bottom: 30px;
+}
+
+.form-contato {
+display: flex;
+flex-direction: column;
+gap: 15px;
+max-width: 500px;
+margin: 0 auto;
+}
+
+.form-contato input,
+.form-contato textarea {
+padding: 12px;
+border: none;
+border-radius: 8px;
+background-color: #1c1f26;
+color: #fff;
+resize: none;
+font-size: 1em;
+}
+
+.form-contato button {
+padding: 12px;
+border: none;
+border-radius: 8px;
+background-color: #4caf50;
+color: white;
+font-size: 1em;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.form-contato button:hover {
+background-color: #45a049;
+}
+
+.redes-sociais {
+margin-top: 30px;
+}
+
+.redes-sociais a {
+color: #fff;
+margin: 0 10px;
+font-size: 1.8em;
+transition: transform 0.3s;
+}
+
+.redes-sociais a:hover {
+transform: scale(1.2);
+}
+hr{
+border: 1px solid;
